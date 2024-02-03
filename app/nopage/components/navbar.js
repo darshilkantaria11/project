@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "../../../public/logo.png"
 import themeContext from "../context/themeContext";
+import { light, dark, forest, vintage, rose, ocean, black, colorful } from '../theme/theme';
 
 export default function navbar() {
 
@@ -52,16 +53,16 @@ export default function navbar() {
                             <div className="hidden md:inline-block  item-center justify-center ">Theme▼ </div>
                         </button>
                         {isOpen && (
-                            <div className="absolute top-20 flex-col right-5  p-4 shadow-md" style={{backgroundColor: theme.theme2}}>
-                                <div className="flex flex-col justify-items-start">
-                                    <div><button onClick={() => switchTheme('light')}>Light Theme</button></div>
-                                    <div><button onClick={() => switchTheme('dark')}>Dark Theme</button></div>
-                                    <div><button onClick={() => switchTheme('vintage')}>Vintage Theme</button></div>
-                                    <div><button onClick={() => switchTheme('forest')}>Forest Theme</button></div>
-                                    <div><button onClick={() => switchTheme('rose')}>rose Theme</button></div>
-                                    <div> <button onClick={() => switchTheme('ocean')}>Ocean Theme</button></div>
-                                    <div> <button onClick={() => switchTheme('colorful')}>Colorful Theme</button></div>
-                                    <div><button onClick={() => switchTheme('black')}>Black Theme</button></div>
+                            <div className="absolute top-20 flex-col right-5  p-4 shadow-md " style={{backgroundColor: theme.theme2}}>
+                                <div className="flex flex-col gap-6 justify-items-start">
+                                    <div className="px-4 py-2" style={{backgroundColor: light.theme1, color: light.headingc}}><button onClick={() => switchTheme('light')}>Light Theme</button></div>
+                                    <div className="px-4 py-2" style={{backgroundColor: dark.theme1, color: dark.headingc}}><button onClick={() => switchTheme('dark')}>Dark Theme</button></div>
+                                    <div className="px-4 py-2" style={{backgroundColor: vintage.theme1, color:vintage.headingc}}><button onClick={() => switchTheme('vintage')}>Vintage Theme</button></div>
+                                    <div className="px-4 py-2" style={{backgroundColor: forest.theme1, color: forest.headingc}}><button onClick={() => switchTheme('forest')}>Forest Theme</button></div>
+                                    <div className="px-4 py-2" style={{backgroundColor: rose.theme1, color: rose.headingc}}><button onClick={() => switchTheme('rose')}>rose Theme</button></div>
+                                    <div className="px-4 py-2" style={{backgroundColor: ocean.theme1, color: ocean.headingc}}> <button onClick={() => switchTheme('ocean')}>Ocean Theme</button></div>
+                                    <div className="px-4 py-2" style={{backgroundColor: colorful.theme1, color: colorful.headingc}}> <button onClick={() => switchTheme('colorful')}>Colorful Theme</button></div>
+                                    <div className="px-4 py-2" style={{backgroundColor: black.theme1, color: black.headingc}}><button onClick={() => switchTheme('black')}>Black Theme</button></div>
                                 </div>
 
                             </div>

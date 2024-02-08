@@ -1,19 +1,21 @@
 // ./app/nopage/theme/mysvg.js
+"use client"
+
 import React, { useContext } from 'react';
 import themeContext from '../context/themeContext';
 
-const MySvg = () => {
+const MySvg = ({className}) => {
   const { theme } = useContext(themeContext);
 
   return (
     <>
    <svg
-        className={``}
+        className={`${className}`}
         viewBox="0 0 1200 628"
         preserveAspectRatio="xMidYMid meet"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path fill={theme.theme2} opacity="1.000000" stroke="none" d="
+        <path fill={theme.theme1} opacity="1.000000" stroke="none" d="
 M729.000000,629.000000 
 	C486.000000,629.000000 243.500031,629.000000 1.000033,629.000000 
 	C1.000022,419.666687 1.000022,210.333389 1.000011,1.000061 
@@ -1343,7 +1345,7 @@ M375.193542,414.295532
 	C385.042206,407.273468 381.332977,410.157715 378.464905,412.233582 
 	C377.523407,412.915070 376.507904,413.494263 375.193542,414.295532 
 z"/>
-<path fill="#2C2D31" opacity="1.000000" stroke="none" 
+<path fill="#000000" opacity="1.000000" stroke="none" 
 	d="
 M568.597351,291.505981 
 	C568.799866,280.817047 569.078125,270.585693 569.458069,260.358154 

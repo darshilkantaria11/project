@@ -1,17 +1,15 @@
 "use client"
-import Image from "next/image";
-import home from "../public/home.svg"
-import MySvg from "./nopage/theme/mysvg";
 
+import Home1 from "./nopage/homec/home1";
 
 
 export default function page() {
-  return (
-    <>
-       <div className="flex">
-        <MySvg/>
-       </div>
 
+
+
+  return (
+    <>  
+    <Home1/>  
     </>
   );
 }

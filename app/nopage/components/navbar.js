@@ -25,7 +25,7 @@ export default function navbar() {
            <style jsx>
             {`
             .ho:hover{
-                background-color: ${theme.textc};
+                background-color: ${theme.theme2};
             }
             `}
            </style>

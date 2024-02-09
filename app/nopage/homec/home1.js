@@ -42,21 +42,21 @@ export default function page() {
                 }
             </style>
 
-            <div className="flex md:flex-row flex-col justify-between md:h-screen " style={{ backgroundColor: theme.theme1 }}>
-                <div className="flex flex-col md:w-3/5 border-4 border-red-600  py-30">
-                    <div className="flex flex-row md:text-6xl text-3xl font-bold">
+            <div className="flex xl:flex-row  flex-wrap flex-col h-screen " style={{ backgroundColor: theme.theme1 }}>
+                <div className="flex flex-col xl:w-3/5 border-4 border-red-600 text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-black">
+                    <div className="flex flex-row  ">
                         <h1>The most </h1><span>&nbsp;</span> <span className="typed "></span>
                     </div>
-                    <div className="hg md:text-6xl text-3xl font-bold">
+                    <div className="hg ">
                         Ready-to-use
                     </div>
-                    <div className="md:text-6xl text-3xl font-bold">
+                    <div className="">
                         Tailwind CSS components
                     </div>
                 </div>
-                <div className=" md:w-2/5  " >
+                <div className=" xl:w-2/5  " >
 
-                    <MySvg className=" md:w-full" />
+                    <MySvg className=" w-full " />
 
                 </div>
             </div>

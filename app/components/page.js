@@ -120,11 +120,18 @@ class App extends Component {
     this.textareaRef = React.createRef();
     this.sidebarRef = React.createRef();
     this.openerRef = React.createRef();
+    this.iframeRef = React.createRef();
   }
 
   componentDidMount() {
     document.addEventListener('keydown', this.keyboardNavigation);
+    // Attach event listeners to iframe content window document
+    if (this.iframeRef.current) {
+      this.iframeRef.current.contentWindow.document.addEventListener('keydown', this.keyboardNavigation);
+      this.iframeRef.current.contentWindow.document.addEventListener('click', () => this.setState({ sidebar: false }));
+    }
   }
+
 
   hideSidebar() {
     const sidebar = this.sidebarRef.current;
@@ -248,6 +255,11 @@ class App extends Component {
     }
     return process(codeStr);
   }
+
+  
+  
+  
+  
 
   changeBlock(e) {
     const { currentTarget } = e;
@@ -384,13 +396,13 @@ class App extends Component {
           </button>
           <div className="switcher bg-transparent">
             <div className="hidden">
-          <button data-theme="indigo" class="theme-button bg-indigo-500 is-active"></button>
-          <button data-theme="yellow" class="theme-button bg-yellow-500"></button>
-          <button data-theme="red" class="theme-button bg-red-500"></button>
-          <button data-theme="purple" class="theme-button bg-purple-500"></button>
-          <button data-theme="pink" class="theme-button bg-pink-500"></button>
-          <button data-theme="blue" class="theme-button bg-blue-500"></button>
-          <button data-theme="green" class="theme-button bg-green-500"></button>
+          <button data-theme="indigo" className="theme-button bg-indigo-500 is-active"></button>
+          <button data-theme="yellow" className="theme-button bg-yellow-500"></button>
+          <button data-theme="red" className="theme-button bg-red-500"></button>
+          <button data-theme="purple" className="theme-button bg-purple-500"></button>
+          <button data-theme="pink" className="theme-button bg-pink-500"></button>
+          <button data-theme="blue" className="theme-button bg-blue-500"></button>
+          <button data-theme="green" className="theme-button bg-green-500"></button>
           </div>
             {this.themeListRenderer()}
           </div>
@@ -400,29 +412,30 @@ class App extends Component {
         <div className="markup" ref={this.markupRef}>{getBlock({ theme, darkMode })[blockType][blockName]}</div>
         <main className="main" style={{ opacity: this.state.ready ? '1' : '0' }}>
           <div className={`view${this.state.codeView ? ' show-code' : ''}`}>
-            <Frame
-              contentDidMount={this.handleContentDidMount}
-              contentDidUpdate={this.handleContentDidUpdate}
-              head={
-                <>
-                  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" rel="stylesheet" />
-                  {
-                    <style dangerouslySetInnerHTML={{
-                      __html:
-                        `img { filter:
+          <Frame
+          ref={this.iframeRef} // Add ref to the iframe
+          contentDidMount={this.handleContentDidMount}
+          contentDidUpdate={this.handleContentDidUpdate}
+          head={
+            <>
+              <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" rel="stylesheet" />
+              {
+                <style dangerouslySetInnerHTML={{
+                  __html:
+                    `img { filter:
                       ${darkMode ?
-                          'invert(1) opacity(.5); mix-blend-mode: luminosity; }'
-                          :
-                          'sepia(1) hue-rotate(190deg) opacity(.46) grayscale(.7) }'
-                        }`
-                    }}
-                    />
-                  }
-                </>
+                        'invert(1) opacity(.5); mix-blend-mode: luminosity; }'
+                        :
+                        'sepia(1) hue-rotate(190deg) opacity(.46) grayscale(.7) }'
+                    }`
+                }}
+                />
               }
-            >
-              {getBlock({ theme, darkMode })[blockType][blockName]}
-            </Frame>
+            </>
+          }
+        >
+          {getBlock({ theme, darkMode })[blockType][blockName]}
+        </Frame>
             <div className="codes">
               <SyntaxHighlighter language="html" style={darkMode ? vs2015 : docco} showLineNumbers>
                 {this.beautifyHTML(this.state.markup)}

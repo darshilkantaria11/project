@@ -30,7 +30,7 @@ export default function navbar() {
             `}
            </style>
 
-            <div className="flex flex-row flex-wrap justify-between  p-2" style={{ backgroundColor: theme.theme1, color: theme.headingc }}>
+            <div className="flex flex-row flex-wrap justify-between sticky top-0 p-2" style={{ backgroundColor: theme.theme2, color: theme.headingc }}>
                 <div className="flex flex-row flex-initial flex-wrap items-center justify-center  ">
                     <div className="mr-4 ho p-2 rounded-md" >
                         <button>
@@ -66,12 +66,12 @@ export default function navbar() {
                                 <div className="flex flex-col gap-6 justify-items-start">
                                     <div className="px-4 py-2 rounded-2xl" style={{ backgroundColor: light.theme1, color: light.headingc }}><button onClick={() => switchTheme('light')}>Light Theme</button></div>
                                     <div className="px-4 py-2 rounded-2xl" style={{ backgroundColor: dark.theme1, color: dark.headingc }}><button onClick={() => switchTheme('dark')}>Dark Theme</button></div>
-                                    <div className="px-4 py-2 rounded-2xl" style={{ backgroundColor: vintage.theme1, color: vintage.headingc }}><button onClick={() => switchTheme('vintage')}>Vintage Theme</button></div>
+                                    {/* <div className="px-4 py-2 rounded-2xl" style={{ backgroundColor: vintage.theme1, color: vintage.headingc }}><button onClick={() => switchTheme('vintage')}>Vintage Theme</button></div>
                                     <div className="px-4 py-2 rounded-2xl" style={{ backgroundColor: forest.theme1, color: forest.headingc }}><button onClick={() => switchTheme('forest')}>Forest Theme</button></div>
                                     <div className="px-4 py-2 rounded-2xl" style={{ backgroundColor: rose.theme1, color: rose.headingc }}><button onClick={() => switchTheme('rose')}>Rose Theme</button></div>
                                     <div className="px-4 py-2 rounded-2xl" style={{ backgroundColor: ocean.theme1, color: ocean.headingc }}> <button onClick={() => switchTheme('ocean')}>Ocean Theme</button></div>
                                     <div className="px-4 py-2 rounded-2xl" style={{ backgroundColor: colorful.theme1, color: colorful.headingc }}> <button onClick={() => switchTheme('colorful')}>Colorful Theme</button></div>
-                                    <div className="px-4 py-2 rounded-2xl" style={{ backgroundColor: black.theme1, color: black.headingc }}><button onClick={() => switchTheme('black')}>Black Theme</button></div>
+                                    <div className="px-4 py-2 rounded-2xl" style={{ backgroundColor: black.theme1, color: black.headingc }}><button onClick={() => switchTheme('black')}>Black Theme</button></div> */}
                                 </div>
 
                             </div>

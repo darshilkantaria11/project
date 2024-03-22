@@ -35,7 +35,7 @@ export default function page() {
                 {
                     `
         .hg {
-            background: linear-gradient(90deg, ${theme.g2} 0%, ${theme.g1} 25%, ${theme.g3} 40%);
+            background: linear-gradient(90deg, ${theme.g2} 0%, ${theme.g1} 15%, ${theme.g3} 40%);
             background-clip: text;
             color: transparent;
         }
@@ -55,7 +55,7 @@ export default function page() {
                         <div className="flex flex-row py-3 ">
                             <h1>The most </h1><span>&nbsp;</span> <span className="typed"></span>
                         </div>
-                        <div className="hg  py-3 ">
+                        <div className="hg  py-3 flex ">
                             <h1>Ready-to-use</h1>
                         </div>
                         <div className="py-3 ">

@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "./nopage/components/navbar";
+
 import ThemeState from "./nopage/context/themeState";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <ThemeState>
       <html lang="en">
         <body className={inter.className}>
-          <Navbar />
+         
           {children}
         </body>
       </html>
